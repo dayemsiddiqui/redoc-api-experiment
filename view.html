@@ -22,7 +22,7 @@
 
   <script>
     const queryParams = new URLSearchParams(window.location.search);
-    const api = queryParams.get('api');
+    const api = 'https://dayemsiddiqui.github.io/redoc-api-experiment' + queryParams.get('api');
 
     var redoc = document.createElement("redoc");
     var specUrl = document.createAttribute("spec-url");
