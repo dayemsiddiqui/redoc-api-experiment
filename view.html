@@ -18,7 +18,26 @@
     </style>
   </head>
   <body>
-    <redoc spec-url='https://raw.githubusercontent.com/asyncapi/asyncapi/v2.2.0/examples/simple.yml'></redoc>
-    <script src="https://cdn.jsdelivr.net/npm/redoc-asyncapi/bundles/redoc.standalone.js"> </script>
+
+
+  <script>
+    const queryParams = new URLSearchParams(window.location.search);
+    const api = queryParams.get('api');
+
+    var redoc = document.createElement("redoc");
+    var specUrl = document.createAttribute("spec-url");
+    specUrl.value = api;
+    redoc.attributes.setNamedItem(specUrl)
+
+    var script = document.createElement("script");
+    var src = document.createAttribute("src");
+    src.value = 'https://cdn.jsdelivr.net/npm/redoc-asyncapi/bundles/redoc.standalone.js'
+    script.attributes.setNamedItem(src)
+
+    document.body.appendChild(redoc);
+    document.body.appendChild(script);
+
+
+  </script>
   </body>
 </html>
